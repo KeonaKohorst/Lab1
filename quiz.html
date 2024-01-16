@@ -1,17 +1,37 @@
 <html>
 	<head></head>	
 	<body>
+		<h1 id='title'>Username Generator</h1>
 		<form id='quizForm' class='quiz'>
 			<label name='q1'>what's your favourite color?</label>
 			<input name='q1' type='text' id='q1'><br>
 			<label name='q2'>what's your favourite season?</label>
 			<input name='q2' type=text' id='q2'><br>
 			<label name='q3'>Pick One:</label>
-			<input type='radio' name='q3'>Monkey</input>
-			<input type='radio' name='q3'>Tiger</input>
-			<input type='radio' name='q3'>Zebra</input><br>
-			<input type='button' value='yep' id='button_confirm'>
-		</form>			
+			<input type='radio' name='q3' id='monkey_r'>Monkey</input>
+			<input type='radio' name='q3' id='tiger_r'>Tiger</input>
+			<input type='radio' name='q3' id='zebra_r'>Zebra</input><br>
+		</form>
+			<button value='yep' id='button_confirm' onClick='finishQuiz()'>yep.</button>
+		<script>
+			function finishQuiz(){
+                           var answerOne = document.getElementById("q1").value;
+			   var answerTwo = document.getElementById("q2").value;
+			   //var answerThree = 
+			   console.log("button pushed");	
+			   
+			   document.getElementById("response").innerHTML = answerOne;
+			   document.getElementById("response").innerHTML += " " + answerTwo;	
+			   if(document.getElementById("monkey_r").checked)
+				{ document.getElementById("response").innerHTML += " Monkey";
+				}else if (document.getElementById("tiger_r").checked){
+ 				  document.getElementById("response").innerHTML += " Tiger";
+				} else if(document.getElementById("zebra_r").checked){
+				  document.getElementById("response").innerHTML += " Zebra";
+				}
+			}
+		</script>	
+		<h4 id='response'></h5>
 	</body>
 
 </html>
