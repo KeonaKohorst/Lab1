@@ -1,5 +1,14 @@
 <html>
-	<head></head>	
+	<head>
+		<style>
+			html{
+				background-color: RGB(255,221,51);
+			}
+			#title, #response{
+				color: RGB(102,75,49);
+			}
+		</style>
+	</head>	
 	<body>
 		<h1 id='title'>Username Generator</h1>
 		<form id='quizForm' class='quiz'>
@@ -12,13 +21,11 @@
 			<input type='radio' name='q3' id='tiger_r'>Tiger</input>
 			<input type='radio' name='q3' id='zebra_r'>Zebra</input><br>
 		</form>
-			<button value='yep' id='button_confirm' onClick='finishQuiz()'>yep.</button>
+			<button id='button_confirm' onClick='finishQuiz()'>Submit</button>
 		<script>
 			function finishQuiz(){
                            var answerOne = document.getElementById("q1").value;
 			   var answerTwo = document.getElementById("q2").value;
-			   //var answerThree = 
-			   console.log("button pushed");	
 			   
 			   document.getElementById("response").innerHTML = answerOne;
 			   document.getElementById("response").innerHTML += " " + answerTwo;	
